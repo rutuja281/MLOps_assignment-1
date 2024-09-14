@@ -17,6 +17,9 @@ jobs:
           HF_TOKEN: ${{ secrets.RUTUJA_TOKEN }}
         run: |
           git remote set-url origin https://Rutuja28:${{ secrets.RUTUJA_TOKEN }}@huggingface.co/spaces/Rutuja28/New_space
+      - name: Pull from Hugging Face
+        run: |
+          git pull origin main
       - name: Push to Hugging Face
         run: |
           git push origin main
