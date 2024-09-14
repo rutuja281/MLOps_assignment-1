@@ -2,8 +2,6 @@ name: Sync to Hugging Face hub
 on:
   push:
     branches: [main]
-
-  # to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -14,9 +12,11 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to hub
+      - name: Set remote URL
         env:
           HF_TOKEN: ${{ secrets.RUTUJA_TOKEN }}
-        run: git remote set-url origin https://Rutuja28:${{ secrets.RUTUJA_TOKEN }}@huggingface.co/spaces/Rutuja28/New_space
-             git push origin main
-
+        run: |
+          git remote set-url origin https://Rutuja28:${{ secrets.RUTUJA_TOKEN }}@huggingface.co/spaces/Rutuja28/New_space
+      - name: Push to Hugging Face
+        run: |
+          git push origin main
