@@ -15,11 +15,5 @@ jobs:
       - name: Set remote URL
         env:
           HF_TOKEN: ${{ secrets.RUTUJA_TOKEN }}
-        run: |
-          git remote set-url origin https://Rutuja28:${{ secrets.RUTUJA_TOKEN }}@huggingface.co/spaces/Rutuja28/New_space
-      - name: Pull from Hugging Face (Merge)
-        run: |
-          git pull origin main --no-rebase
-      - name: Push to Hugging Face
-        run: |
-          git push origin main
+        run: git remote set-url origin https://Rutuja28:${{ secrets.RUTUJA_TOKEN }}@huggingface.co/spaces/Rutuja28/New_space
+      
