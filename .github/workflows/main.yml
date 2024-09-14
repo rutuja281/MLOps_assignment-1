@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.MLOPSECRET }}
-        run: git remote set-url origin https://Rutuja_28:$rutuja_token@huggingface.co/spaces/Rutuja_28/New_space
+        run: git remote set-url origin https://Rutuja28:$rutuja_token@huggingface.co/spaces/Rutuja28/New_space
